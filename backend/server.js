@@ -19,10 +19,11 @@ const customerRoutes1 = require("./routes/Customer");
 app.use("/api/customers",customerRoutes1);
 app.use("/api/products", require("./routes/ProductRoute"));
 app.use("/api/orders", require("./routes/OrderRoute"));
-
+app.use("/api/clientorders", require("./routes/ClientOrderRoute"));
+app.use("/api/masterorders", require("./routes/MasterOrderR"))
 const customerRoutes = require("./routes/customer.route");
 app.use("/api/customers", customerRoutes);
-
+app.use("/api/orderdetails",require("./routes/OrderDetailsRoute"))
 
 
 //connect to mongodb

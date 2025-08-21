@@ -13,28 +13,28 @@ const seedProducts = async () => {
 
     const products = [
       {
-        productId: "P001",
+        productId: "72480125",
         name: "Smart Watch",
         price: 4200,
         description: "Water-resistant with health tracking",
         stock: 10
       },
       {
-        productId: "P002",
+        productId: "72480225",
         name: "Wireless Charger",
         price: 2800,
         description: "Fast charging and sleek design",
         stock: 25
       },
       {
-        productId: "P003",
+        productId: "72480325",
         name: "Earbuds",
         price: 3200,
         description: "Noise-cancelling and compact",
         stock: 30
       },
       {
-        productId: "P004",
+        productId: "72480425",
         name: "Wireless Keyboard",
         price: 2500,
         description: "Ergonomic and low-latency",

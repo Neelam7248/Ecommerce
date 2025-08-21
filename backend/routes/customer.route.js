@@ -19,7 +19,7 @@ router.post("/", async (req, res) => {
 
     try {
     const { name, email } = req.body;
-    const newCustomer = new Customer({ name, email });
+    const newCustomer = new Customer({ name, email ,address});
     await newCustomer.save();
     res.status(201).json(newCustomer);
   } catch (err) {
@@ -30,10 +30,10 @@ router.post("/", async (req, res) => {
 // UPDATE customer
 router.put("/:_Id", async (req, res) => {
   try {
-    const { name, email } = req.body;
+    const { name, email,address } = req.body;
     const updatedCustomer = await Customer.findByIdAndUpdate(
       req.params._Id,
-      { name, email },
+      { name, email,address },
       { new: true }
     );
     if (!updatedCustomer) return res.status(404).json({ error: "Customer not found" });

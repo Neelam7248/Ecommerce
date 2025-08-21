@@ -70,5 +70,18 @@ console.log("🔢 Items count:", items.length);
     return res.status(500).json({ error: "Could not place order", details: err.message });
   }
 });
+// GET /api/orders - Get all orders
+router.get("/", async (req, res) => {
+  try {
+    const orders = await Order.find()
+      .populate("customerId", "name email")  // customer ka name/email bhi lae ga
+      .populate("items.productId", "name price"); // product ka name/price bhi lae ga
+
+    res.json(orders);
+  } catch (err) {
+    console.error("❌ Error fetching orders:", err.message);
+    res.status(500).json({ error: "Could not fetch orders" });
+  }
+});
 
 module.exports = router;

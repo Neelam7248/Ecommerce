@@ -1,20 +1,18 @@
 const mongoose = require("mongoose");
 
-const orderSchema = new mongoose.Schema({
- _id: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Customer",
+const clientOrderSchema = new mongoose.Schema({
+  customerId: {
+    type: Number, // match Customer's auto-increment field
     required: true
   },
- 
- name: {
+  name: {
+    type: String,
+    required: true
+  },
+  email:{ 
     type:String,
-    required: true
+    required:true
   },
- email:{
-  type:String,
-  required:true
- },
   address: {
     type: String,
     required: true
@@ -29,5 +27,6 @@ const orderSchema = new mongoose.Schema({
   ]
 }, { timestamps: true });
 
-const Order = mongoose.model("Order", orderSchema);
-module.exports = Order;
+// Yahan 'ClientOrder' naam ka model ban raha hai
+const ClientOrder = mongoose.model("ClientOrder", clientOrderSchema);
+module.exports = ClientOrder;
